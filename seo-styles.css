@@ -204,7 +204,18 @@ h2 { font-size: clamp(30px, 7vw, 48px); line-height: 1.04; }
 }
 
 .quote-form textarea { min-height: 110px; padding-top: 15px; }
-.form-success { color: #35502d; font-weight: 750; }
+.form-success {
+  padding: 15px;
+  border-radius: 17px;
+  background: rgba(89, 98, 74, .12);
+  color: #35502d;
+  font-weight: 750;
+}
+.form-success.is-error {
+  background: rgba(150, 49, 49, .1);
+  color: #7a2525;
+}
+.cta:disabled { cursor: wait; opacity: .68; }
 
 .map {
   width: 100%;

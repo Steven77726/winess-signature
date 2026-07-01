@@ -1146,6 +1146,18 @@
       font-size: 18px;
     }
 
+    .form-success.is-error,
+    .modal-success.is-error {
+      background: rgba(150, 49, 49, .1);
+      border: 1px solid rgba(150, 49, 49, .18);
+      color: #7a2525;
+    }
+
+    .btn:disabled {
+      cursor: wait;
+      opacity: .68;
+    }
+
     .footer {
       padding: 44px 18px calc(32px + env(safe-area-inset-bottom));
       background: #120d0a;
@@ -1475,6 +1487,7 @@
 
     gtag('config', 'G-T4J0JQ16P6');
   </script>
+  <script src="quote-submit.js" defer></script>
 </head>
 <body>
   <div class="app">
@@ -1739,7 +1752,7 @@
             <h2>Recevez votre devis personnalisé</h2>
             <p>Réponse rapide de notre équipe Winess Signature.</p>
           </div>
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" data-quote-form>
             <input name="lastName" id="fullName" autocomplete="family-name" placeholder="Nom" required>
             <input name="firstName" autocomplete="given-name" placeholder="Prénom" required>
             <input name="phone" autocomplete="tel" placeholder="Téléphone" required>
@@ -1765,10 +1778,7 @@
               <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
             </div>
           </form>
-          <div class="form-success" id="formSuccess" role="status" aria-live="polite">
-            <strong>✅ Merci pour votre demande.</strong>
-            Notre équipe Winess Signature vous contactera rapidement afin de vous transmettre une proposition adaptée à votre événement.
-          </div>
+          <div class="form-success" id="formSuccess" data-quote-status-for="contactForm" role="status" aria-live="polite" hidden></div>
         </div>
       </section>
 
@@ -1857,17 +1867,26 @@
         <h2 id="quoteModalTitle">Demande de devis personnalisé</h2>
         <button class="modal-close" id="quoteModalClose" type="button" aria-label="Fermer la fenêtre">×</button>
       </div>
-      <form class="modal-form" id="customQuoteForm">
-        <input id="modalLastName" name="modalLastName" autocomplete="family-name" placeholder="Nom *" required>
-        <input name="modalFirstName" autocomplete="given-name" placeholder="Prénom *" required>
-        <input name="modalPhone" type="tel" autocomplete="tel" placeholder="Téléphone *" required>
-        <input name="modalEmail" type="email" autocomplete="email" placeholder="Adresse e-mail *" required>
-        <input name="modalDate" type="date" aria-label="Date de l'événement" required>
-        <input id="modalGuests" name="modalGuests" type="number" min="110" max="300" placeholder="Nombre d'invités *" required>
-        <input name="modalCity" autocomplete="address-level2" placeholder="Ville de l'événement *" required>
-        <textarea name="modalComment" placeholder="Commentaire"></textarea>
+      <form class="modal-form" id="customQuoteForm" data-quote-form>
+        <input id="modalLastName" name="lastName" autocomplete="family-name" placeholder="Nom *" required>
+        <input name="firstName" autocomplete="given-name" placeholder="Prénom *" required>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="Téléphone *" required>
+        <input name="email" type="email" autocomplete="email" placeholder="Adresse e-mail *" required>
+        <select name="eventType" aria-label="Type d'événement" required>
+          <option value="">Type d'événement *</option>
+          <option>Mariage</option><option>Anniversaire</option><option>Bar Mitsvah</option><option>Bat Mitsvah</option>
+          <option>Entreprise</option><option>EVJF</option><option>EVG</option><option>Soirée privée</option><option>Autre</option>
+        </select>
+        <input name="date" type="date" aria-label="Date de l'événement" required>
+        <input id="modalGuests" name="guestCount" type="number" min="110" max="300" placeholder="Nombre d'invités *" required>
+        <input name="city" autocomplete="address-level2" placeholder="Ville de l'événement *" required>
+        <select name="formula" aria-label="Formule choisie" required>
+          <option value="Devis sur mesure">Devis sur mesure</option>
+          <option>Bar à cocktails</option><option>Bar à vin</option><option>Bar mobile cacher</option>
+        </select>
+        <textarea name="message" placeholder="Commentaire"></textarea>
         <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
-        <div class="modal-success" id="modalSuccess" role="status" aria-live="polite" hidden>✅ Merci pour votre demande. Notre équipe Winess Signature vous contactera rapidement.</div>
+        <div class="modal-success" id="modalSuccess" data-quote-status role="status" aria-live="polite" hidden></div>
       </form>
     </div>
   </div>
@@ -1902,7 +1921,7 @@
     const customQuoteForm = document.querySelector("#customQuoteForm");
     const modalLastName = document.querySelector("#modalLastName");
     const modalGuests = document.querySelector("#modalGuests");
-    const modalDateInput = customQuoteForm.elements.modalDate;
+    const modalDateInput = customQuoteForm.elements.date;
     const modalSuccess = document.querySelector("#modalSuccess");
     const infoModal = document.querySelector("#infoModal");
     const infoModalClose = document.querySelector("#infoModalClose");
@@ -2108,7 +2127,7 @@
 
     function openQuoteModal() {
       modalGuests.value = guests.value;
-      const modalDate = customQuoteForm.elements.modalDate;
+      const modalDate = customQuoteForm.elements.date;
       if (eventDate.value) modalDate.value = eventDate.value;
       modalSuccess.hidden = true;
       quoteModal.classList.add("open");
@@ -2182,12 +2201,6 @@
       if (event.key === "Escape" && infoModal.classList.contains("open")) closeInfoModal();
     });
 
-    customQuoteForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      modalSuccess.hidden = false;
-      modalSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    });
-
     function premiumScrollToForm() {
       const contact = document.querySelector("#contact");
       const headerOffset = document.querySelector(".header").offsetHeight + 14;
@@ -2224,12 +2237,6 @@
         menuButton.setAttribute("aria-expanded", "false");
         premiumScrollToForm();
       });
-    });
-
-    document.querySelector("#contactForm").addEventListener("submit", (event) => {
-      event.preventDefault();
-      formSuccess.classList.add("show");
-      formSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
 
     updateQuote();

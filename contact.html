@@ -23,6 +23,7 @@
 
     gtag('config', 'G-T4J0JQ16P6');
   </script>
+  <script src="quote-submit.js" defer></script>
 </head>
 <body>
   <header class="site-header"><a class="brand" href="index.html"><img src="assets/logo-winess-320.png" alt="Logo WINESS Signature" width="52" height="52"><span>WINESS Signature</span></a><nav class="nav" aria-label="Navigation principale"><a href="bar-cocktails.html">Cocktails</a><a href="bar-vin.html">Vin</a><a href="spiritueux.html">Spiritueux</a><a href="contact.html">Devis</a></nav></header>
@@ -32,7 +33,7 @@
         <span class="eyebrow" style="background:rgba(197,132,77,.14);color:#6c3c21;border-color:rgba(197,132,77,.2)">Réponse rapide</span>
         <h1>Demande de devis pour votre bar mobile à Paris</h1>
         <p class="lead">Indiquez les informations essentielles de votre événement. Notre équipe vous recontactera pour choisir la formule adaptée, sans paiement en ligne.</p>
-        <form class="quote-form" id="seoQuoteForm">
+        <form class="quote-form" id="seoQuoteForm" data-quote-form>
           <input name="lastName" autocomplete="family-name" placeholder="Nom *" required>
           <input name="firstName" autocomplete="given-name" placeholder="Prénom *" required>
           <input name="phone" type="tel" autocomplete="tel" placeholder="Téléphone *" required>
@@ -40,22 +41,16 @@
           <select name="eventType" required><option value="">Type d'événement *</option><option>Anniversaire</option><option>Mariage</option><option>Bar Mitsvah</option><option>Bat Mitsvah</option><option>Entreprise</option><option>Soirée privée</option><option>Inauguration</option><option>Remise de diplôme</option><option>Pool Party</option><option>Autre</option></select>
           <input name="date" type="date" aria-label="Date de l'événement" required>
           <input name="city" autocomplete="address-level2" placeholder="Ville de l'événement *" required>
-          <input name="guests" type="number" min="40" max="300" placeholder="Nombre d'invités *" required>
+          <input name="guestCount" type="number" min="40" max="300" placeholder="Nombre d'invités *" required>
           <select name="formula" required><option value="">Formule souhaitée *</option><option>Bar à cocktails</option><option>Bar à vin</option><option>Bar mobile cacher</option><option>Formule Signature</option><option>Devis sur mesure</option></select>
-          <textarea name="comment" placeholder="Commentaire"></textarea>
+          <textarea name="message" placeholder="Commentaire"></textarea>
           <button class="cta" type="submit">Envoyer ma demande</button>
-          <p class="form-success" id="seoFormSuccess" hidden>Merci pour votre demande. Notre équipe WINESS Signature vous contactera rapidement.</p>
+          <p class="form-success" id="seoFormSuccess" data-quote-status role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </section>
     <section><div class="container"><h2>Nous contacter</h2><p class="lead">Sabwine / Winess — 42 rue des Acacias, 75019 Paris — <a href="tel:+33173207818">01 73 20 78 18</a> — <a href="mailto:steven@sabwine.com">steven@sabwine.com</a><br>Ouvert tous les jours de 9h à 19h30.</p><iframe class="map" title="Carte WINESS Signature à Paris" src="https://www.google.com/maps?q=42+rue+des+Acacias,+75019+Paris&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>
   </main>
   <footer class="site-footer"><nav class="footer-links"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgv.html">CGV</a><a href="contact.html">Contact</a><a href="https://www.instagram.com/winesssignature/" target="_blank" rel="noopener">Instagram</a></nav></footer>
-  <script>
-    document.querySelector("#seoQuoteForm").addEventListener("submit", (event) => {
-      event.preventDefault();
-      document.querySelector("#seoFormSuccess").hidden = false;
-    });
-  </script>
 </body>
 </html>
