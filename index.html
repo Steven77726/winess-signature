@@ -151,9 +151,10 @@
       position: fixed;
       inset: env(safe-area-inset-top) 0 auto 0;
       z-index: 30;
-      display: flex;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
-      justify-content: space-between;
+      gap: 12px;
       padding: 14px 18px;
       background: rgba(248, 243, 235, .78);
       border-bottom: 1px solid rgba(255, 255, 255, .56);
@@ -262,7 +263,7 @@
 
     .hero {
       min-height: 92vh;
-      padding: 158px 18px 28px;
+      padding: 108px 18px 28px;
       display: grid;
       align-items: end;
       position: relative;
@@ -459,19 +460,12 @@
     }
 
     .trust-strip {
-      position: fixed;
-      top: calc(82px + env(safe-area-inset-top));
-      left: 0;
-      right: 0;
-      z-index: 24;
+      min-width: 0;
       display: flex;
-      gap: 8px;
+      align-items: center;
+      gap: 7px;
       overflow-x: auto;
-      padding: 8px 14px;
-      background: rgba(255, 250, 242, .78);
-      border-bottom: 1px solid rgba(34, 24, 16, .08);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      padding: 2px;
       scrollbar-width: none;
     }
 
@@ -479,15 +473,15 @@
 
     .trust-strip span {
       flex: 0 0 auto;
-      min-height: 36px;
+      min-height: 32px;
       display: inline-flex;
       align-items: center;
-      padding: 0 12px;
+      padding: 0 10px;
       border-radius: 999px;
       background: rgba(255, 255, 255, .72);
       color: #2a211b;
       box-shadow: 0 8px 18px rgba(42, 26, 16, .08);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 760;
     }
 
@@ -1360,8 +1354,8 @@
     }
 
     .realisations-section {
-      padding-block: 54px;
-      scroll-margin-top: 140px;
+      padding-block: 38px;
+      scroll-margin-top: 90px;
       background: #17100d;
       color: #fffaf2;
     }
@@ -1374,9 +1368,9 @@
     .photo-gallery {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: min(84vw, 360px);
-      gap: 14px;
-      padding: 4px 2px 14px;
+      grid-auto-columns: min(74vw, 300px);
+      gap: 10px;
+      padding: 2px 2px 10px;
       overflow-x: auto;
       overscroll-behavior-inline: contain;
       scroll-snap-type: inline mandatory;
@@ -1393,14 +1387,14 @@
       min-width: 0;
       overflow: hidden;
       border: 1px solid rgba(255, 250, 242, .14);
-      border-radius: 28px;
+      border-radius: 22px;
       background: #0d0907;
       box-shadow: 0 20px 48px rgba(0, 0, 0, .28);
       scroll-snap-align: center;
     }
 
     .video-card {
-      aspect-ratio: 9 / 16;
+      aspect-ratio: 9 / 14;
     }
 
     .video-card video,
@@ -1464,12 +1458,12 @@
     }
 
     .gallery-subtitle {
-      margin: 26px 0 13px;
-      font-size: 18px;
+      margin: 18px 0 10px;
+      font-size: 16px;
     }
 
     .photo-gallery {
-      grid-auto-columns: min(78vw, 340px);
+      grid-auto-columns: min(68vw, 280px);
     }
 
     .photo-card {
@@ -1479,7 +1473,7 @@
     }
 
     .gallery-action {
-      margin-top: 22px;
+      margin-top: 16px;
       display: flex;
       justify-content: center;
     }
@@ -1690,19 +1684,21 @@
       .contact-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .process-step { grid-template-columns: 1fr; align-content: start; }
-      .video-gallery {
-        grid-auto-flow: initial;
-        grid-auto-columns: initial;
-        grid-template-columns: repeat(2, minmax(0, 360px));
-        justify-content: center;
-        overflow: visible;
+    }
+
+    @media (min-width: 960px) {
+      .realisations-section .section-inner {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
       }
-      .photo-gallery {
-        grid-auto-flow: initial;
-        grid-auto-columns: initial;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        overflow: visible;
-      }
+      .realisations-section .section-title,
+      .gallery-action { grid-column: 1 / -1; }
+      .video-gallery,
+      .photo-gallery { display: contents; }
+      .gallery-subtitle { display: none; }
+      .realisations-section .media-card { aspect-ratio: 4 / 5; }
+      .gallery-action { margin-top: 8px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1732,6 +1728,12 @@
         <img src="assets/logo-winess-320.png" alt="Logo Winess Signature" width="320" height="320" fetchpriority="high">
         <span>Winess<br>Signature</span>
       </a>
+      <div class="trust-strip" aria-label="Bandeau de confiance">
+        <span>⚡ Réponse généralement sous 24h</span>
+        <span>📞 Contact direct</span>
+        <span>📱 WhatsApp disponible</span>
+        <span>📍 Paris et Île-de-France proche</span>
+      </div>
       <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><i></i></button>
     </header>
 
@@ -1751,18 +1753,11 @@
       </div>
     </nav>
 
-    <div class="trust-strip" aria-label="Bandeau de confiance">
-      <span>⚡ Réponse généralement sous 24h</span>
-      <span>📞 Contact direct</span>
-      <span>📱 WhatsApp disponible</span>
-      <span>📍 Paris et Île-de-France proche</span>
-    </div>
-
     <main id="top">
       <section class="hero">
         <div class="hero-content">
           <span class="eyebrow">Bar mobile premium</span>
-          <h1>Winess Signature Experience</h1>
+          <h1>Winess Signature</h1>
           <p class="subtitle">Le bar mobile premium qui apporte l'élégance du cocktail et du vin à votre événement.</p>
           <p class="copy">Bar à cocktails et bar à vin pour mariages, anniversaires, Bar Mitsvah, Bat Mitsvah, événements privés et professionnels.</p>
           <span class="place">Paris • Neuilly • Levallois • Boulogne • Vincennes</span>
@@ -1775,53 +1770,6 @@
             <a class="btn btn-primary" href="#contact" data-quote-scroll>Créer mon devis</a>
             <a class="btn btn-whatsapp" href="https://wa.me/33663659679" target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn btn-secondary" href="#univers">Découvrir nos prestations</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="univers">
-        <div class="section-inner">
-          <div class="section-title">
-            <h2>Nos univers</h2>
-            <p>Deux expériences signature, pensées pour un service fluide, élégant et parfaitement adapté à votre réception.</p>
-          </div>
-          <div class="cards">
-            <article class="card universe-card">
-              <div>
-                <div class="card-heading">
-                  <h3 class="icon-title">🍸 Bar à Cocktails</h3>
-                  <a class="instagram-link" href="https://www.instagram.com/p/DZdU1naoB19/" target="_blank" rel="noopener" aria-label="Voir la vidéo Winess Signature sur Instagram">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor" stroke="none"/></svg>
-                    <span>Instagram</span>
-                  </a>
-                </div>
-                <ul class="clean-list">
-                  <li>Bartenders professionnels</li>
-                  <li>Cocktails réalisés à la minute</li>
-                  <li>Installation complète</li>
-                  <li>Expérience premium</li>
-                </ul>
-              </div>
-              <a class="btn btn-dark" href="bar-cocktails.html">Découvrir</a>
-            </article>
-            <article class="card universe-card wine">
-              <div>
-                <div class="card-heading">
-                  <h3 class="icon-title">🍷 Bar à Vin</h3>
-                  <a class="instagram-link" href="https://www.instagram.com/p/DZXRTM1t6aw/" target="_blank" rel="noopener" aria-label="Voir la vidéo Bar à Vin Winess Signature sur Instagram">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor" stroke="none"/></svg>
-                    <span>Instagram</span>
-                  </a>
-                </div>
-                <ul class="clean-list">
-                  <li>Dégustation de vins</li>
-                  <li>Sélection adaptée à l'événement</li>
-                  <li>Service professionnel</li>
-                  <li>Présentation élégante</li>
-                </ul>
-              </div>
-              <a class="btn btn-dark" href="bar-vin.html">Découvrir</a>
-            </article>
           </div>
         </div>
       </section>
@@ -1872,6 +1820,73 @@
 
           <div class="gallery-action">
             <a class="btn btn-primary" href="#contact" data-quote-scroll>Demander un devis pour mon événement</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="zone">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Bar mobile à Paris et en Île-de-France</h2>
+            <p>WINESS Signature propose un bar à cocktails Paris, un bar à vin événementiel et des bartenders à domicile pour vos mariages, entreprises et réceptions privées.</p>
+          </div>
+          <div class="badges">
+            <span class="badge">Paris</span>
+            <span class="badge">Neuilly-sur-Seine</span>
+            <span class="badge">Levallois-Perret</span>
+            <span class="badge">Boulogne-Billancourt</span>
+            <span class="badge">Vincennes</span>
+            <span class="badge">Saint-Mandé</span>
+            <span class="badge">Courbevoie</span>
+          </div>
+          <p class="zone-text">Depuis le 42 Rue des Acacias, 75017 Paris, Sabwine / Winess intervient à Paris et dans les communes proches pour des animations cocktail, cocktails de mariage, cocktails d'entreprise et prestations de bar mobile casher.</p>
+          <iframe class="map-frame" title="Localisation de WINESS Signature, 42 Rue des Acacias, 75017 Paris" src="https://www.google.com/maps?q=42+Rue+des+Acacias,+75017+Paris&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+
+      <section id="univers">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Nos univers</h2>
+            <p>Deux expériences signature, pensées pour un service fluide, élégant et parfaitement adapté à votre réception.</p>
+          </div>
+          <div class="cards">
+            <article class="card universe-card">
+              <div>
+                <div class="card-heading">
+                  <h3 class="icon-title">🍸 Bar à Cocktails</h3>
+                  <a class="instagram-link" href="https://www.instagram.com/p/DZdU1naoB19/" target="_blank" rel="noopener" aria-label="Voir la vidéo Winess Signature sur Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor" stroke="none"/></svg>
+                    <span>Instagram</span>
+                  </a>
+                </div>
+                <ul class="clean-list">
+                  <li>Bartenders professionnels</li>
+                  <li>Cocktails réalisés à la minute</li>
+                  <li>Installation complète</li>
+                  <li>Expérience premium</li>
+                </ul>
+              </div>
+              <a class="btn btn-dark" href="bar-cocktails.html">Découvrir</a>
+            </article>
+            <article class="card universe-card wine">
+              <div>
+                <div class="card-heading">
+                  <h3 class="icon-title">🍷 Bar à Vin</h3>
+                  <a class="instagram-link" href="https://www.instagram.com/p/DZXRTM1t6aw/" target="_blank" rel="noopener" aria-label="Voir la vidéo Bar à Vin Winess Signature sur Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor" stroke="none"/></svg>
+                    <span>Instagram</span>
+                  </a>
+                </div>
+                <ul class="clean-list">
+                  <li>Dégustation de vins</li>
+                  <li>Sélection adaptée à l'événement</li>
+                  <li>Service professionnel</li>
+                  <li>Présentation élégante</li>
+                </ul>
+              </div>
+              <a class="btn btn-dark" href="bar-vin.html">Découvrir</a>
+            </article>
           </div>
         </div>
       </section>
@@ -1997,26 +2012,6 @@
               </aside>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="zone">
-        <div class="section-inner">
-          <div class="section-title">
-            <h2>Bar mobile à Paris et en Île-de-France</h2>
-            <p>WINESS Signature propose un bar à cocktails Paris, un bar à vin événementiel et des bartenders à domicile pour vos mariages, entreprises et réceptions privées.</p>
-          </div>
-          <div class="badges">
-            <span class="badge">Paris</span>
-            <span class="badge">Neuilly-sur-Seine</span>
-            <span class="badge">Levallois-Perret</span>
-            <span class="badge">Boulogne-Billancourt</span>
-            <span class="badge">Vincennes</span>
-            <span class="badge">Saint-Mandé</span>
-            <span class="badge">Courbevoie</span>
-          </div>
-          <p class="zone-text">Depuis le 42 Rue des Acacias, 75017 Paris, Sabwine / Winess intervient à Paris et dans les communes proches pour des animations cocktail, cocktails de mariage, cocktails d'entreprise et prestations de bar mobile casher.</p>
-          <iframe class="map-frame" title="Localisation de WINESS Signature, 42 Rue des Acacias, 75017 Paris" src="https://www.google.com/maps?q=42+Rue+des+Acacias,+75017+Paris&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
 
