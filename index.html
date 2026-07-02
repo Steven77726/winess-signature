@@ -1359,6 +1359,169 @@
       font-weight: 720;
     }
 
+    .realisations-section {
+      padding-block: 54px;
+      scroll-margin-top: 140px;
+      background: #17100d;
+      color: #fffaf2;
+    }
+
+    .realisations-section .section-title p {
+      color: rgba(255, 250, 242, .72);
+    }
+
+    .video-gallery,
+    .photo-gallery {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: min(84vw, 360px);
+      gap: 14px;
+      padding: 4px 2px 14px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: inline mandatory;
+      scrollbar-width: none;
+    }
+
+    .video-gallery::-webkit-scrollbar,
+    .photo-gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .media-card {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 250, 242, .14);
+      border-radius: 28px;
+      background: #0d0907;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .28);
+      scroll-snap-align: center;
+    }
+
+    .video-card {
+      aspect-ratio: 9 / 16;
+    }
+
+    .video-card video,
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .media-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 34%;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(10, 7, 5, .58));
+    }
+
+    .media-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      min-height: 34px;
+      padding: 0 11px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(20, 14, 10, .72);
+      border: 1px solid rgba(255, 250, 242, .2);
+      color: #fffaf2;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .video-toggle {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255, 250, 242, .3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(20, 14, 10, .7);
+      color: #fffaf2;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      cursor: pointer;
+    }
+
+    .video-toggle svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .gallery-subtitle {
+      margin: 26px 0 13px;
+      font-size: 18px;
+    }
+
+    .photo-gallery {
+      grid-auto-columns: min(78vw, 340px);
+    }
+
+    .photo-card {
+      aspect-ratio: 4 / 5;
+      padding: 0;
+      cursor: zoom-in;
+    }
+
+    .gallery-action {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .gallery-lightbox {
+      width: min(94vw, 980px);
+      max-height: 92vh;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 28px;
+      background: #100c09;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+    }
+
+    .gallery-lightbox::backdrop {
+      background: rgba(10, 7, 5, .76);
+      backdrop-filter: blur(12px);
+    }
+
+    .gallery-lightbox img {
+      width: 100%;
+      max-height: 88vh;
+      display: block;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 50%;
+      background: rgba(18, 13, 10, .72);
+      color: #fff;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
     .quote-modal {
       position: fixed;
       inset: 0;
@@ -1527,6 +1690,19 @@
       .contact-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .process-step { grid-template-columns: 1fr; align-content: start; }
+      .video-gallery {
+        grid-auto-flow: initial;
+        grid-auto-columns: initial;
+        grid-template-columns: repeat(2, minmax(0, 360px));
+        justify-content: center;
+        overflow: visible;
+      }
+      .photo-gallery {
+        grid-auto-flow: initial;
+        grid-auto-columns: initial;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: visible;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1646,6 +1822,56 @@
               </div>
               <a class="btn btn-dark" href="bar-vin.html">Découvrir</a>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="realisations-section" id="realisations">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Nos réalisations</h2>
+            <p>Découvrez l'ambiance de nos bars mobiles, cocktails et prestations événementielles.</p>
+          </div>
+
+          <div class="video-gallery" aria-label="Vidéos des prestations WINESS Signature">
+            <article class="media-card video-card">
+              <span class="media-badge">🍸 Cocktails</span>
+              <video data-lazy-video autoplay muted loop playsinline preload="none" poster="assets/realisations/prestation-cocktails.webp" aria-label="Préparation de cocktails WINESS Signature">
+                <source data-src="assets/realisations/winess-cocktails.mp4" type="video/mp4">
+              </video>
+              <button class="video-toggle" type="button" aria-label="Lire ou mettre en pause la vidéo">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>
+              </button>
+            </article>
+            <article class="media-card video-card">
+              <span class="media-badge">🎉 Événement</span>
+              <video data-lazy-video autoplay muted loop playsinline preload="none" poster="assets/realisations/service-winess.webp" aria-label="Prestation événementielle WINESS Signature">
+                <source data-src="assets/realisations/winess-evenement.mp4" type="video/mp4">
+              </video>
+              <button class="video-toggle" type="button" aria-label="Lire ou mettre en pause la vidéo">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>
+              </button>
+            </article>
+          </div>
+
+          <h3 class="gallery-subtitle">En images</h3>
+          <div class="photo-gallery" aria-label="Photos des prestations WINESS Signature">
+            <button class="media-card photo-card" type="button" data-lightbox-src="assets/realisations/bar-mobile-winess.webp" data-lightbox-alt="Bar mobile WINESS Signature installé dans un appartement parisien">
+              <img src="assets/realisations/bar-mobile-winess.webp" alt="Bar mobile WINESS Signature installé dans un appartement parisien" width="1080" height="810" loading="lazy" decoding="async">
+              <span class="media-badge">🥂 Bar mobile</span>
+            </button>
+            <button class="media-card photo-card" type="button" data-lightbox-src="assets/realisations/prestation-cocktails.webp" data-lightbox-alt="Bartender WINESS Signature derrière son bar mobile premium">
+              <img src="assets/realisations/prestation-cocktails.webp" alt="Bartender WINESS Signature derrière son bar mobile premium" width="810" height="1080" loading="lazy" decoding="async">
+              <span class="media-badge">🍸 Cocktails</span>
+            </button>
+            <button class="media-card photo-card" type="button" data-lightbox-src="assets/realisations/service-winess.webp" data-lightbox-alt="Service professionnel WINESS Signature lors d'un événement">
+              <img src="assets/realisations/service-winess.webp" alt="Service professionnel WINESS Signature lors d'un événement" width="900" height="1080" loading="lazy" decoding="async">
+              <span class="media-badge">🍷 Winess Signature</span>
+            </button>
+          </div>
+
+          <div class="gallery-action">
+            <a class="btn btn-primary" href="#contact" data-quote-scroll>Demander un devis pour mon événement</a>
           </div>
         </div>
       </section>
@@ -1904,6 +2130,11 @@
     </div>
   </div>
 
+  <dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Photo WINESS Signature agrandie">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer l'image agrandie">×</button>
+    <img id="lightboxImage" alt="">
+  </dialog>
+
   <div class="quote-modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
     <div class="quote-modal-panel">
       <div class="modal-head">
@@ -2011,6 +2242,11 @@
     const infoModalTitle = document.querySelector("#infoModalTitle");
     const infoModalButtons = document.querySelectorAll("[data-info-modal]");
     const infoPanels = document.querySelectorAll("[data-info-panel]");
+    const lazyVideos = document.querySelectorAll("[data-lazy-video]");
+    const galleryLightbox = document.querySelector("#galleryLightbox");
+    const lightboxImage = document.querySelector("#lightboxImage");
+    const lightboxClose = document.querySelector("#lightboxClose");
+    const photoCards = document.querySelectorAll("[data-lightbox-src]");
     const eventTypes = ["Mariage", "Anniversaire", "Bar Mitsvah", "Bat Mitsvah", "Entreprise", "EVJF", "EVG", "Soirée privée", "Autre"];
     const cocktailList = ["Martini Passion", "Espresso Martini", "Moscow Mule", "Margarita", "Spicy Margarita", "Cosmopolitan", "French Martini", "Daiquiri Fraise", "Gin Basil Smash", "Gin Tonic Framboise", "Piña Colada", "Limoncello Spritz"];
     const yomTovDatesByYear = {
@@ -2033,6 +2269,71 @@
     let activeMonth = new Date();
     let selectedDate = null;
     let infoModalTrigger = null;
+
+    function loadGalleryVideo(video, shouldPlay = false) {
+      if (!video.dataset.loaded) {
+        video.querySelectorAll("source[data-src]").forEach((source) => {
+          source.src = source.dataset.src;
+        });
+        video.dataset.loaded = "true";
+        video.load();
+      }
+      if (shouldPlay) video.play().catch(() => {});
+    }
+
+    function updateVideoButton(video) {
+      const button = video.closest(".video-card").querySelector(".video-toggle");
+      if (video.paused) {
+        button.setAttribute("aria-label", "Lire la vidéo");
+        button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>';
+      } else {
+        button.setAttribute("aria-label", "Mettre la vidéo en pause");
+        button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>';
+      }
+    }
+
+    lazyVideos.forEach((video) => {
+      video.addEventListener("play", () => updateVideoButton(video));
+      video.addEventListener("pause", () => updateVideoButton(video));
+    });
+
+    if ("IntersectionObserver" in window) {
+      const videoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          loadGalleryVideo(entry.target, true);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: "300px 0px" });
+      lazyVideos.forEach((video) => videoObserver.observe(video));
+    } else {
+      lazyVideos.forEach((video) => loadGalleryVideo(video));
+    }
+
+    document.querySelectorAll(".video-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const video = button.closest(".video-card").querySelector("video");
+        loadGalleryVideo(video);
+        if (video.paused) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    });
+
+    photoCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        lightboxImage.src = card.dataset.lightboxSrc;
+        lightboxImage.alt = card.dataset.lightboxAlt;
+        galleryLightbox.showModal();
+      });
+    });
+
+    lightboxClose.addEventListener("click", () => galleryLightbox.close());
+    galleryLightbox.addEventListener("click", (event) => {
+      if (event.target === galleryLightbox) galleryLightbox.close();
+    });
 
     menuButton.addEventListener("click", () => {
       const isOpen = menu.classList.toggle("open");
