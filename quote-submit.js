@@ -60,7 +60,9 @@
         body: JSON.stringify(payload)
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok || result.success === false) throw new Error("Envoi refusé");
+      if (!response.ok || result.success === false || result.success === "false") {
+        throw new Error(result.message || "Envoi refusé");
+      }
 
       if (status) setStatus(status, successMessage, false);
       if (typeof window.gtag === "function") {
