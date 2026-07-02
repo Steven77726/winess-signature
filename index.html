@@ -65,8 +65,8 @@
         "priceRange": "À partir de 1 490 € TTC",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "42 rue des Acacias",
-          "postalCode": "75019",
+          "streetAddress": "42 Rue des Acacias",
+          "postalCode": "75017",
           "addressLocality": "Paris",
           "addressCountry": "FR"
         },
@@ -1303,6 +1303,60 @@
     .float-whatsapp {
       background: #25d366;
       color: #062c17;
+      box-shadow: 0 16px 38px rgba(37, 211, 102, .38);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #062c17;
+      box-shadow: 0 14px 32px rgba(37, 211, 102, .28);
+    }
+
+    .process-section {
+      padding-block: 48px;
+      background: rgba(255, 255, 255, .4);
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .process-step {
+      min-height: 132px;
+      padding: 20px;
+      border-radius: 26px;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 250, 242, .9);
+      border: 1px solid rgba(34, 24, 16, .08);
+      box-shadow: 0 14px 36px rgba(42, 26, 16, .08);
+    }
+
+    .process-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: rgba(197, 132, 77, .14);
+      font-size: 23px;
+    }
+
+    .process-step span {
+      color: #8a4d2a;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .process-step p {
+      margin: 5px 0 0;
+      color: var(--ink);
+      line-height: 1.45;
+      font-weight: 720;
     }
 
     .quote-modal {
@@ -1471,6 +1525,8 @@
       .modal-form textarea, .modal-form button, .modal-success { grid-column: 1 / -1; }
       .contact-form textarea, .contact-actions { grid-column: 1 / -1; }
       .contact-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .process-step { grid-template-columns: 1fr; align-content: start; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1541,6 +1597,7 @@
           </div>
           <div class="actions">
             <a class="btn btn-primary" href="#contact" data-quote-scroll>Créer mon devis</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/33663659679" target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn btn-secondary" href="#univers">Découvrir nos prestations</a>
           </div>
         </div>
@@ -1588,6 +1645,28 @@
                 </ul>
               </div>
               <a class="btn btn-dark" href="bar-vin.html">Découvrir</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process-section" id="fonctionnement">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Comment ça fonctionne ?</h2>
+          </div>
+          <div class="process-grid">
+            <article class="process-step">
+              <div class="process-icon" aria-hidden="true">📝</div>
+              <div><span>Étape 1</span><p>Demandez votre devis.</p></div>
+            </article>
+            <article class="process-step">
+              <div class="process-icon" aria-hidden="true">📞</div>
+              <div><span>Étape 2</span><p>Nous validons ensemble votre prestation.</p></div>
+            </article>
+            <article class="process-step">
+              <div class="process-icon" aria-hidden="true">🍸</div>
+              <div><span>Étape 3</span><p>Nous installons le bar mobile et assurons le service le jour de votre événement.</p></div>
             </article>
           </div>
         </div>
@@ -1710,8 +1789,8 @@
             <span class="badge">Saint-Mandé</span>
             <span class="badge">Courbevoie</span>
           </div>
-          <p class="zone-text">Depuis le 42 rue des Acacias à Paris 19e, Sabwine / Winess intervient à Paris et dans les communes proches pour des animations cocktail, cocktails de mariage, cocktails d'entreprise et prestations de bar mobile cacher.</p>
-          <iframe class="map-frame" title="Localisation de WINESS Signature, 42 rue des Acacias à Paris" src="https://www.google.com/maps?q=42+rue+des+Acacias,+75019+Paris&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p class="zone-text">Depuis le 42 Rue des Acacias, 75017 Paris, Sabwine / Winess intervient à Paris et dans les communes proches pour des animations cocktail, cocktails de mariage, cocktails d'entreprise et prestations de bar mobile casher.</p>
+          <iframe class="map-frame" title="Localisation de WINESS Signature, 42 Rue des Acacias, 75017 Paris" src="https://www.google.com/maps?q=42+Rue+des+Acacias,+75017+Paris&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
 
@@ -1731,7 +1810,7 @@
             <div class="compact-card"><b>✓</b>Service</div>
             <div class="compact-card"><b>✓</b>Nettoyage</div>
             <div class="compact-card"><b>✓</b>Conseils</div>
-            <div class="compact-card"><b>✓</b>Produits 100 % Casher</div>
+            <div class="compact-card"><b>✓</b>Vins certifiés casher et produits sélectionnés</div>
           </div>
           <div class="section-title compact-subtitle" id="evenements">
             <h2>Nos événements</h2>
@@ -1833,11 +1912,11 @@
       </div>
 
       <div class="info-panel" data-info-panel="casher" hidden>
-        <div class="kosher-badge">✅ Produits 100 % Casher</div>
+        <div class="kosher-badge">✅ Sélection adaptée à un service casher</div>
         <div class="info-copy">
-          <p>Chez WINESS, nous accordons une importance particulière à la qualité et à la cacherout de tous nos produits.</p>
-          <p>Tous les sirops, purées, spiritueux et ingrédients utilisés sont sélectionnés avec soin et vérifiés selon les listes officielles des organismes rabbiniques reconnus.</p>
-          <p>Nos vins sont exclusivement des vins 100 % fabriqués Casher provenant de producteurs certifiés sous différents contrôles rabbiniques tels que :</p>
+          <p>Chez WINESS, nous accordons une importance particulière à la qualité et à la cacherout des produits proposés.</p>
+          <p>Une sélection de vins certifiés casher et de produits soigneusement sélectionnés permet de répondre aux exigences d'un service casher.</p>
+          <p>Nos vins proviennent de producteurs certifiés sous différents contrôles rabbiniques tels que :</p>
           <ul>
             <li>Beth Din de Paris</li>
             <li>Katz</li>
@@ -2141,7 +2220,7 @@
 
     function openInfoModal(type, trigger) {
       const titles = {
-        casher: "Produits 100 % Casher",
+        casher: "Sélection casher",
         events: "Nos événements"
       };
       infoModalTrigger = trigger;
