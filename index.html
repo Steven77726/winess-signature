@@ -105,6 +105,78 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Combien coûte un bar mobile pour un événement ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Formule Signature WINESS débute à 1 490 € TTC jusqu'à 50 personnes. De 51 à 109 invités, le tarif augmente de 20 € TTC par personne supplémentaire. À partir de 110 personnes, une proposition personnalisée est préparée selon le lieu, la durée, le nombre de bartenders, le type de bar et les boissons souhaitées. Les frais de déplacement sont calculés séparément. Un devis précis permet de confirmer chaque élément avant la réservation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les cocktails sont-ils 100 % casher ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WINESS propose des vins certifiés casher et des produits soigneusement sélectionnés pour répondre aux exigences d'un service casher. Les sirops, purées, spiritueux et autres ingrédients sont vérifiés selon les références disponibles auprès d'organismes rabbiniques reconnus. Le niveau de certification attendu peut être précisé lors de la demande de devis. Notre équipe échange également avec le traiteur, la salle ou l'autorité rabbinique de votre événement lorsque cette coordination est nécessaire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Intervenez-vous partout à Paris et en Île-de-France ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. WINESS Signature intervient à Paris ainsi que dans les communes proches d'Île-de-France, notamment Neuilly-sur-Seine, Levallois-Perret, Boulogne-Billancourt, Vincennes, Saint-Mandé et Courbevoie. D'autres destinations peuvent être étudiées selon la date, le format de l'événement et les conditions d'accès au lieu. Les frais de déplacement et les éventuelles contraintes logistiques sont toujours précisés dans le devis afin de garantir une organisation claire, sans surprise le jour de la prestation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que comprend la prestation WINESS Signature ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La prestation comprend le ou les bartenders prévus au devis, un bar mobile premium, l'installation, le matériel professionnel, les consommables, le service et le nettoyage du poste. Les cocktails sont préparés à la minute et la sélection est définie avec vous en amont. WINESS apporte également ses conseils sur le menu, les quantités et l'organisation du bar. Les boissons, options casher, horaires et besoins spécifiques sont détaillés dans la proposition personnalisée."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de cocktails prévoir pour 100 invités ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour 100 invités, la quantité dépend surtout de la durée du service, de l'horaire, de la présence de vin ou de champagne et du profil de la réception. En pratique, une base de deux à trois cocktails par personne permet souvent d'établir une première estimation pour plusieurs heures de service. Nous ajustons ensuite les volumes, la glace, les garnitures et l'équipe afin de maintenir un service fluide. Le devis précise les quantités recommandées selon votre programme réel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Organisez-vous des bars mobiles pour les mariages, Bar Mitsvah et Bat Mitsvah ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. WINESS Signature installe des bars mobiles pour les mariages, Bar Mitsvah, Bat Mitsvah, anniversaires et autres réceptions privées. La carte de cocktails, le rythme du service, la présentation du bar et l'équipe sont adaptés au nombre d'invités et au déroulement de la soirée. Pour les événements casher, nous pouvons prévoir des vins certifiés casher, des produits sélectionnés et une coordination avec le traiteur ou la salle afin de respecter l'organisation prévue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Proposez-vous également des cocktails sans alcool (mocktails) ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Nous proposons des mocktails préparés à la minute avec la même attention portée aux saveurs, à la présentation et aux garnitures que pour les cocktails alcoolisés. Ils conviennent aux enfants, aux conducteurs, aux femmes enceintes et aux invités qui ne consomment pas d'alcool. La Formule Signature inclut un mocktail au choix. Nous pouvons aussi créer une sélection sans alcool plus large lorsque le format de l'événement ou le profil des invités le justifie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment obtenir un devis personnalisé ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Utilisez le configurateur ou le formulaire de devis en indiquant vos coordonnées, la date, la ville, le type d'événement, le nombre d'invités et la formule souhaitée. Plus les informations sont précises, plus notre première proposition peut être adaptée. Vous pouvez également nous contacter directement sur WhatsApp pour présenter votre projet. L'équipe WINESS revient ensuite vers vous afin de valider les horaires, le lieu, les cocktails, les options et les contraintes logistiques avant de transmettre le devis final."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --cream: #f8f3eb;
@@ -971,6 +1043,8 @@
     .faq-list {
       display: grid;
       gap: 8px;
+      max-width: 860px;
+      margin-inline: auto;
     }
 
     .faq-list details {
@@ -985,17 +1059,36 @@
       min-height: 46px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 16px;
       padding: 0 14px;
       font-size: 14px;
       font-weight: 800;
+      list-style: none;
       cursor: pointer;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      font-size: 22px;
+      font-weight: 500;
+      transition: transform .25s ease;
+    }
+
+    .faq-list details[open] summary::after {
+      transform: rotate(45deg);
     }
 
     .faq-list p {
       padding: 0 14px 14px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.4;
+      line-height: 1.55;
     }
 
     .legal-box {
@@ -2092,6 +2185,48 @@
             </div>
           </form>
           <div class="form-success" id="formSuccess" data-quote-status-for="contactForm" role="status" aria-live="polite" hidden></div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Questions fréquentes</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Combien coûte un bar mobile pour un événement ?</summary>
+              <p>La Formule Signature WINESS débute à 1 490 € TTC jusqu'à 50 personnes. De 51 à 109 invités, le tarif augmente de 20 € TTC par personne supplémentaire. À partir de 110 personnes, une proposition personnalisée est préparée selon le lieu, la durée, le nombre de bartenders, le type de bar et les boissons souhaitées. Les frais de déplacement sont calculés séparément. Un devis précis permet de confirmer chaque élément avant la réservation.</p>
+            </details>
+            <details>
+              <summary>Les cocktails sont-ils 100 % casher ?</summary>
+              <p>WINESS propose des vins certifiés casher et des produits soigneusement sélectionnés pour répondre aux exigences d'un service casher. Les sirops, purées, spiritueux et autres ingrédients sont vérifiés selon les références disponibles auprès d'organismes rabbiniques reconnus. Le niveau de certification attendu peut être précisé lors de la demande de devis. Notre équipe échange également avec le traiteur, la salle ou l'autorité rabbinique de votre événement lorsque cette coordination est nécessaire.</p>
+            </details>
+            <details>
+              <summary>Intervenez-vous partout à Paris et en Île-de-France ?</summary>
+              <p>Oui. WINESS Signature intervient à Paris ainsi que dans les communes proches d'Île-de-France, notamment Neuilly-sur-Seine, Levallois-Perret, Boulogne-Billancourt, Vincennes, Saint-Mandé et Courbevoie. D'autres destinations peuvent être étudiées selon la date, le format de l'événement et les conditions d'accès au lieu. Les frais de déplacement et les éventuelles contraintes logistiques sont toujours précisés dans le devis afin de garantir une organisation claire, sans surprise le jour de la prestation.</p>
+            </details>
+            <details>
+              <summary>Que comprend la prestation WINESS Signature ?</summary>
+              <p>La prestation comprend le ou les bartenders prévus au devis, un bar mobile premium, l'installation, le matériel professionnel, les consommables, le service et le nettoyage du poste. Les cocktails sont préparés à la minute et la sélection est définie avec vous en amont. WINESS apporte également ses conseils sur le menu, les quantités et l'organisation du bar. Les boissons, options casher, horaires et besoins spécifiques sont détaillés dans la proposition personnalisée.</p>
+            </details>
+            <details>
+              <summary>Combien de cocktails prévoir pour 100 invités ?</summary>
+              <p>Pour 100 invités, la quantité dépend surtout de la durée du service, de l'horaire, de la présence de vin ou de champagne et du profil de la réception. En pratique, une base de deux à trois cocktails par personne permet souvent d'établir une première estimation pour plusieurs heures de service. Nous ajustons ensuite les volumes, la glace, les garnitures et l'équipe afin de maintenir un service fluide. Le devis précise les quantités recommandées selon votre programme réel.</p>
+            </details>
+            <details>
+              <summary>Organisez-vous des bars mobiles pour les mariages, Bar Mitsvah et Bat Mitsvah ?</summary>
+              <p>Oui. WINESS Signature installe des bars mobiles pour les mariages, Bar Mitsvah, Bat Mitsvah, anniversaires et autres réceptions privées. La carte de cocktails, le rythme du service, la présentation du bar et l'équipe sont adaptés au nombre d'invités et au déroulement de la soirée. Pour les événements casher, nous pouvons prévoir des vins certifiés casher, des produits sélectionnés et une coordination avec le traiteur ou la salle afin de respecter l'organisation prévue.</p>
+            </details>
+            <details>
+              <summary>Proposez-vous également des cocktails sans alcool (mocktails) ?</summary>
+              <p>Oui. Nous proposons des mocktails préparés à la minute avec la même attention portée aux saveurs, à la présentation et aux garnitures que pour les cocktails alcoolisés. Ils conviennent aux enfants, aux conducteurs, aux femmes enceintes et aux invités qui ne consomment pas d'alcool. La Formule Signature inclut un mocktail au choix. Nous pouvons aussi créer une sélection sans alcool plus large lorsque le format de l'événement ou le profil des invités le justifie.</p>
+            </details>
+            <details>
+              <summary>Comment obtenir un devis personnalisé ?</summary>
+              <p>Utilisez le configurateur ou le formulaire de devis en indiquant vos coordonnées, la date, la ville, le type d'événement, le nombre d'invités et la formule souhaitée. Plus les informations sont précises, plus notre première proposition peut être adaptée. Vous pouvez également nous contacter directement sur WhatsApp pour présenter votre projet. L'équipe WINESS revient ensuite vers vous afin de valider les horaires, le lieu, les cocktails, les options et les contraintes logistiques avant de transmettre le devis final.</p>
+            </details>
+          </div>
         </div>
       </section>
 
