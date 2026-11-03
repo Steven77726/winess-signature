@@ -1806,6 +1806,8 @@
 
 /* Three aligned offer cards */
 .offers-section .section-inner{max-width:1260px}.offers-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}.offer-panel{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-width:0;border-radius:26px}.offer-intro{padding:30px 26px;justify-content:flex-start;min-height:310px}.offer-label{min-height:36px}.offer-intro h3{font-size:42px;margin:12px 0 20px}.offer-price{font-size:32px}.offer-capacity{min-height:45px;margin-bottom:20px}.offer-intro .btn{margin-top:auto;width:100%;text-align:center}.offer-details{padding:28px 26px;display:flex;flex-direction:column}.offer-details ul{grid-template-columns:1fr;gap:16px}.offer-option{margin-top:auto;padding-top:20px}.offer-details ul + .offer-option{margin-top:26px}.wine-offer .offer-intro{background:#3e4540}.wine-offer .offer-label{color:#d5d9b8}.offer-number{font-size:112px}.offers-note{max-width:930px}@media(max-width:900px){.offers-list{grid-template-columns:1fr;max-width:600px;margin-inline:auto}.offer-intro{min-height:0}.offer-label,.offer-capacity{min-height:0}.offer-intro .btn{width:auto;margin-top:0}.offer-details ul{grid-template-columns:1fr 1fr}}@media(max-width:420px){.offer-details ul{grid-template-columns:1fr}}
+
+.offers-section .section-inner{max-width:1440px}.offers-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.offer-intro{padding:28px 22px;min-height:350px}.offer-intro h3{font-size:clamp(27px,2.5vw,38px);line-height:1.15;min-height:88px}.offer-title-option{display:block;font-family:inherit;font-size:17px;font-weight:400;line-height:1.6;margin-top:5px}.offer-details{padding:26px 22px}.offer-details li{overflow-wrap:anywhere}.spirits-offer .offer-intro{background:#40302a}.spirits-offer .offer-label{color:#ddbd99}.offer-intro .btn{font-size:13px;padding-inline:14px}@media(min-width:701px) and (max-width:1100px){.offers-list{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}.offer-details ul{grid-template-columns:1fr}.offer-intro{min-height:330px}.offer-intro .btn{width:100%;margin-top:auto}}@media(max-width:700px){.offers-list{grid-template-columns:1fr;max-width:600px}.offer-intro{min-height:0}.offer-intro h3{min-height:0;font-size:36px}.offer-intro .btn{width:auto;margin-top:0}}
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4J0JQ16P6"></script>
@@ -1860,7 +1862,7 @@
 
       <section id="offres" class="offers-section" aria-labelledby="offers-title">
         <div class="section-inner">
-          <div class="section-title"><span class="offers-kicker">LES FORMULES WINESS SIGNATURE</span><h2 id="offers-title">À vous la soirée.<br>À nous le bar.</h2><p>Trois expériences, cinq heures de service et une sélection qui vous ressemble.</p></div>
+          <div class="section-title"><span class="offers-kicker">LES FORMULES WINESS SIGNATURE</span><h2 id="offers-title">À vous la soirée.<br>À nous le bar.</h2><p>Deux formules cocktails et deux options pour enrichir votre réception.</p></div>
           <div class="offers-list">
             <article class="offer-panel premium-offer" aria-labelledby="premium-title">
               <div class="offer-intro"><span class="offer-number" aria-hidden="true">01</span><span class="offer-label">L’ESSENTIEL, AVEC ÉLÉGANCE</span><h3 id="premium-title">Premium</h3><p class="offer-price">1 390 € <span>TTC</span></p><p class="offer-capacity">Pour 40 personnes · 5 heures de service</p><a class="btn btn-primary" href="#contact" data-quote-scroll data-offer="Premium">Choisir Premium</a></div>
@@ -1871,8 +1873,12 @@
               <div class="offer-details"><ul><li><strong>2 bartenders</strong> à votre service</li><li><strong>1 bar mobile de 2,40 m</strong></li><li><strong>Shot de bienvenue</strong></li><li><strong>3 cocktails + 1 mocktail</strong> à la carte</li><li><strong>Carte interactive</strong></li><li><strong>5 heures de service</strong></li><li><strong>À partir de 200 personnes</strong></li></ul><div class="offer-option"><span>EN OPTION · SUPPLÉMENT PAYANT</span><p>Alcools premium : Beluga, Clase Azul… Sélection et disponibilité à confirmer au devis.</p></div></div>
             </article>
             <article class="offer-panel wine-offer" aria-labelledby="collection-title">
-              <div class="offer-intro"><span class="offer-number" aria-hidden="true">03</span><span class="offer-label">BAR À VINS</span><h3 id="collection-title">Collection</h3><p class="offer-price">Sur devis</p><p class="offer-capacity">Votre sélection de vins · 5 heures de service</p><a class="btn btn-primary" href="#contact" data-quote-scroll data-offer="Collection — Bar à vins">Choisir Collection</a></div>
+              <div class="offer-intro"><span class="offer-number" aria-hidden="true">03</span><span class="offer-label">BAR À VINS</span><h3 id="collection-title">Bar à vins <span class="offer-title-option">(option)</span></h3><p class="offer-price">Sur devis</p><p class="offer-capacity">Votre sélection de vins · 5 heures de service</p><a class="btn btn-primary" href="#contact" data-quote-scroll data-offer="Bar à vins (option)">Choisir le bar à vins</a></div>
               <div class="offer-details"><ul><li><strong>Bar à vins</strong> pour votre réception</li><li><strong>800 références disponibles</strong> à sélectionner vous-même</li><li><strong>1 sommelier diplômé</strong></li><li><strong>1 shomer inclus</strong></li><li><strong>5 heures de service</strong></li></ul></div>
+            </article>
+            <article class="offer-panel spirits-offer" aria-labelledby="spirits-title">
+              <div class="offer-intro"><span class="offer-number" aria-hidden="true">04</span><span class="offer-label">SPIRITUEUX PREMIUM</span><h3 id="spirits-title">Bar à whisky &amp; tequila <span class="offer-title-option">(option)</span></h3><p class="offer-price">Sur devis</p><p class="offer-capacity">Une sélection de spiritueux pour votre réception</p><a class="btn btn-primary" href="#contact" data-quote-scroll data-offer="Bar à whisky & tequila (option)">Choisir cette option</a></div>
+              <div class="offer-details"><ul><li><strong>Large choix de whiskies</strong>Macallan, Nikka, Johnnie Walker Blue Label…</li><li><strong>Large choix de tequilas premium</strong>Clase Azul, Don Julio 1942, Adictivo, Reserva de la Familia…</li><li><strong>Tous nos produits sont vérifiés casher.</strong></li></ul><div class="offer-option"><span>OPTION PAYANTE</span><p>Sélection et disponibilité à confirmer au devis.</p></div></div>
             </article>
           </div>
           <p class="offers-note">Barman, bar mobile, alcools de la sélection prévue et verres inclus : il ne vous reste qu’à profiter de la soirée. Les quantités, les options et les éventuels frais de déplacement sont précisés au devis.</p>
@@ -1981,7 +1987,7 @@
               <option>Bar à cocktails</option>
               <option>Bar à vin</option>
               <option>Bar mobile cacher</option>
-              <option>Premium</option><option>Gala</option><option>Collection — Bar à vins</option>
+              <option>Premium</option><option>Gala</option><option>Bar à vins (option)</option><option>Bar à whisky &amp; tequila (option)</option>
               <option>Devis sur mesure</option>
             </select>
             <textarea name="message" id="message" placeholder="Commentaires"></textarea>
