@@ -45,11 +45,6 @@
         "logo": "https://winesssignature.fr/assets/logo-winess-320.png",
         "email": "steven@sabwine.com",
         "telephone": "+33173207818",
-        "identifier": {
-          "@type": "PropertyValue",
-          "propertyID": "SIRET",
-          "value": "844 897 199 00015"
-        },
         "sameAs": ["https://www.instagram.com/winesssignature/"]
       },
       {
@@ -62,7 +57,7 @@
         "logo": "https://winesssignature.fr/assets/logo-winess-320.png",
         "telephone": "+33173207818",
         "email": "steven@sabwine.com",
-        "priceRange": "À partir de 1 490 € TTC",
+        "priceRange": "À partir de 1 390 € TTC",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "42 Rue des Acacias",
@@ -98,8 +93,8 @@
         "offers": {
           "@type": "Offer",
           "priceCurrency": "EUR",
-          "price": "1490",
-          "description": "Formule Signature jusqu'à 50 personnes, sur demande de devis."
+          "price": "1390",
+          "description": "Formule Signature pour 40 personnes, sur demande de devis."
         }
       }
     ]
@@ -115,7 +110,7 @@
         "name": "Combien coûte un bar mobile pour un événement ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La Formule Signature WINESS débute à 1 490 € TTC jusqu'à 50 personnes. De 51 à 109 invités, le tarif augmente de 20 € TTC par personne supplémentaire. À partir de 110 personnes, une proposition personnalisée est préparée selon le lieu, la durée, le nombre de bartenders, le type de bar et les boissons souhaitées. Les frais de déplacement sont calculés séparément. Un devis précis permet de confirmer chaque élément avant la réservation."
+          "text": "La Formule Signature WINESS débute à 1 390 € TTC pour 40 personnes. Au-delà de 40 personnes, une proposition personnalisée est préparée. À partir de 110 personnes, une proposition personnalisée est préparée selon le lieu, la durée, le nombre de bartenders, le type de bar et les boissons souhaitées. Les frais de déplacement sont calculés séparément. Un devis précis permet de confirmer chaque élément avant la réservation."
         }
       },
       {
@@ -171,7 +166,7 @@
         "name": "Comment obtenir un devis personnalisé ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Utilisez le configurateur ou le formulaire de devis en indiquant vos coordonnées, la date, la ville, le type d'événement, le nombre d'invités et la formule souhaitée. Plus les informations sont précises, plus notre première proposition peut être adaptée. Vous pouvez également nous contacter directement sur WhatsApp pour présenter votre projet. L'équipe WINESS revient ensuite vers vous afin de valider les horaires, le lieu, les cocktails, les options et les contraintes logistiques avant de transmettre le devis final."
+          "text": "Utilisez le formulaire de devis en indiquant vos coordonnées, la date, la ville, le type d'événement, le nombre d'invités et la formule souhaitée. Plus les informations sont précises, plus notre première proposition peut être adaptée. Vous pouvez également nous contacter directement sur WhatsApp pour présenter votre projet. L'équipe WINESS revient ensuite vers vous afin de valider les horaires, le lieu, les cocktails, les options et les contraintes logistiques avant de transmettre le devis final."
         }
       }
     ]
@@ -348,7 +343,7 @@
       position: absolute;
       inset: 0;
       z-index: -2;
-      background: url("assets/hero-cocktail-bar.jpg") center / cover no-repeat;
+      background: url("assets/bar-mobile-winess.webp") center / cover no-repeat;
       transform: scale(1.02);
     }
 
@@ -1802,6 +1797,8 @@
         transition-duration: .01ms !important;
       }
     }
+
+.anchor-nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:650}.header .trust-strip{display:none}.anchor-nav a:hover{color:var(--gold)}.hero-quote{display:grid;gap:10px}.hero-price{font-size:14px;font-weight:600}.hero .actions{align-items:flex-start}section,[id="evenements"]{scroll-margin-top:110px}.hero::before{background-position:center 35%}.hero h1{max-width:20ch;font-size:clamp(32px,4.6vw,62px);line-height:1.1}.hero .copy{max-width:580px}@media(max-width:900px){.anchor-nav{display:none}}@media(min-width:901px){.header .hamburger{display:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4J0JQ16P6"></script>
@@ -1821,7 +1818,7 @@
         <img src="assets/logo-winess-320.png" alt="Logo Winess Signature" width="320" height="320" fetchpriority="high">
         <span>Winess<br>Signature</span>
       </a>
-      <div class="trust-strip" aria-label="Bandeau de confiance">
+      <nav class="anchor-nav" aria-label="Navigation principale"><a href="#univers">Prestations</a><a href="#evenements">Événements</a><a href="#inclus">Tout inclus</a><a href="#realisations">Réalisations</a><a href="#journal">Blog</a><a href="#contact">Devis</a></nav><div class="trust-strip" aria-label="Bandeau de confiance">
         <span>⚡ Réponse généralement sous 24h</span>
         <span>📞 Contact direct</span>
         <span>📱 WhatsApp disponible</span>
@@ -1831,26 +1828,14 @@
     </header>
 
     <nav class="menu" id="menu" aria-label="Nos services">
-      <div class="menu-panel">
-        <div class="menu-title">Nos services</div>
-        <a href="bar-cocktails.html">Bar à Cocktails</a>
-        <a href="bar-vin.html">Bar à Vin</a>
-        <a href="spiritueux.html">Spiritueux</a>
-        <a href="bar-cocktails-mariage.html">Mariages</a>
-        <a href="bar-cocktails-anniversaire.html">Anniversaires</a>
-        <a href="#devis">Bar Mitsvah</a>
-        <a href="#devis">Bat Mitsvah</a>
-        <a href="bar-cocktails-entreprise.html">Entreprises</a>
-        <a href="traiteur-casher-paris.html">Option Casher</a>
-        <a href="#contact" data-quote-scroll>Demande de devis</a>
-      </div>
+      <div class="menu-panel"><div class="menu-title">Winess Signature</div><a href="#univers">Nos prestations</a><a href="#evenements">Vos événements</a><a href="#inclus">Tout inclus</a><a href="#realisations">Nos réalisations</a><a href="#journal">Blog & conseils</a><a href="#contact" data-quote-scroll>Demander un devis</a>      </div>
     </nav>
 
     <main id="top">
       <section class="hero">
         <div class="hero-content">
-          <span class="eyebrow">Bar mobile premium</span>
-          <h1>Winess Signature</h1>
+          <span class="eyebrow">Winess Signature · Bar mobile premium</span>
+          <h1>Bar à cocktails mobile à Paris et en Île-de-France</h1>
           <p class="subtitle">Location de bar mobile avec bartender à Paris et en Île-de-France : cocktails et vins pour votre événement.</p>
           <p class="copy">Bar à cocktails et bar à vin pour mariages, anniversaires, Bar Mitsvah, Bat Mitsvah, événements privés et professionnels.</p>
           <span class="place">Paris • Neuilly • Levallois • Boulogne • Vincennes</span>
@@ -1860,7 +1845,7 @@
             <span>✨ Bartenders expérimentés</span>
           </div>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact" data-quote-scroll>Créer mon devis</a>
+            <div class="hero-quote"><a class="btn btn-primary" href="#contact" data-quote-scroll>Demander un devis</a><p class="hero-price">À partir de 1 390 € TTC pour 40 personnes</p></div>
             <a class="btn btn-whatsapp" href="https://wa.me/33663659679" target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn btn-secondary" href="#univers">Découvrir nos prestations</a>
           </div>
@@ -1914,109 +1899,7 @@
         </div>
       </section>
 
-      <section class="quote" id="devis">
-        <div class="section-inner">
-          <div class="section-title">
-            <h2>Créer mon devis en moins de 2 minutes</h2>
-            <p>Sélectionnez vos informations essentielles, l'équipe et le tarif s'ajustent automatiquement.</p>
-          </div>
-          <div class="quote-shell">
-            <div class="quote-steps">
-              <div class="step">
-                <div class="step-label">Étape 1</div>
-                <label class="field-title" for="guests">Nombre d'invités</label>
-                <select id="guests" name="guests"></select>
-                <div class="team-card">
-                  <strong>Équipe recommandée</strong>
-                  <ul id="teamList"></ul>
-                </div>
-              </div>
-
-              <div class="step">
-                <div class="step-label">Étape 2</div>
-                <h3 class="field-title">Date de l'événement</h3>
-                <div class="calendar" aria-label="Calendrier des disponibilités">
-                  <div class="cal-head">
-                    <button class="icon-btn" type="button" id="prevMonth" aria-label="Mois précédent">‹</button>
-                    <div class="month-label" id="monthLabel"></div>
-                    <button class="icon-btn" type="button" id="nextMonth" aria-label="Mois suivant">›</button>
-                  </div>
-                  <div class="cal-grid" id="calendarGrid"></div>
-                  <input type="hidden" id="eventDate" name="eventDate">
-                  <p class="date-picked" id="datePicked">Les vendredis et samedis sont indisponibles.</p>
-                </div>
-              </div>
-
-              <div class="step">
-                <div class="step-label">Étape 3</div>
-                <h3 class="field-title">Type d'événement</h3>
-                <div class="pill-grid" id="eventTypes"></div>
-              </div>
-
-              <div class="step">
-                <div class="step-label">Étape 4</div>
-                <h3 class="field-title">Choix des cocktails</h3>
-                <div class="pill-grid" id="cocktails"></div>
-                <p class="choice-note" id="cocktailNote">0/3 cocktails sélectionnés.</p>
-              </div>
-
-              <div class="step" id="casher">
-                <div class="step-label">Étape 5</div>
-                <div class="kosher-card">
-                  <h3>Prestation Casher</h3>
-                  <p>Compatible avec les mariages, Bar Mitsvah, Bat Mitsvah et réceptions communautaires.</p>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="side-stack">
-              <aside class="card summary-card" aria-live="polite">
-                <h3>Votre événement</h3>
-                <div class="summary-list">
-                  <div><span>📅 Date</span><span id="summaryDate">À définir</span></div>
-                  <div><span>👥 Invités</span><span id="summaryGuests">40 invités</span></div>
-                  <div><span>🍸 Cocktails</span><span id="summaryCocktails">À choisir</span></div>
-                  <div><span>👨‍🍳 Équipe</span><span id="summaryTeam">1 Bartender, 1 Bar mobile</span></div>
-                  <div><span>📍 Ville</span><span id="summaryCity">À définir</span></div>
-                  <div><span>💰 Estimation</span><span id="summaryPrice">1490 € TTC</span></div>
-                </div>
-              </aside>
-              <aside class="card pricing-card" id="tarifs">
-                <div class="section-title">
-                  <h2>Nos formules</h2>
-                </div>
-                <h3>Formule Signature</h3>
-                <p class="formula-from">À partir de 1 490 € TTC</p>
-                <p><strong>Jusqu'à 50 personnes</strong></p>
-                <ul class="clean-list">
-                  <li>1 Bartender professionnel</li>
-                  <li>1 Bar mobile premium</li>
-                  <li>Installation</li>
-                  <li>Service</li>
-                  <li>Matériel professionnel</li>
-                  <li>Consommables</li>
-                  <li>3 cocktails au choix</li>
-                  <li>+ 1 mocktail au choix</li>
-                  <li>Nettoyage du poste</li>
-                </ul>
-                <div class="price-result" id="priceEstimateBox">
-                  <strong>Estimation automatique</strong>
-                  <p id="priceResult">1490 € TTC pour 40 invités.</p>
-                </div>
-                <button class="custom-quote-btn" id="customQuoteButton" type="button" hidden>👉 Contacter pour un devis</button>
-                <p class="notice">Jusqu'à 50 personnes : 1 490 € TTC. De 51 à 109 personnes : 20 € TTC par personne supplémentaire. À partir de 110 personnes : devis personnalisé. Les tarifs affichés sont hors frais de déplacement.</p>
-                <div class="actions">
-                  <a class="btn btn-primary" href="#contact" data-quote-scroll>Recevoir mon devis personnalisé</a>
-                  <a class="btn btn-light" href="#contact" data-quote-scroll>Envoyez votre demande de devis</a>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="process-section" id="fonctionnement">
+<section class="process-section" id="fonctionnement">
         <div class="section-inner">
           <div class="section-title">
             <h2>Comment ça fonctionne ?</h2>
@@ -2041,8 +1924,8 @@
       <section class="compact-section" id="inclus">
         <div class="section-inner">
           <div class="section-title">
-            <h2>✅ Ce qui est inclus dans votre prestation</h2>
-            <p>Une organisation complète et claire pour votre événement.</p>
+            <h2>Nos offres sont tout inclus</h2>
+            <p>Barman, bar mobile, alcools et verres : tout est inclus. Il ne vous reste qu’à profiter de la soirée ! Les quantités, la durée, les options et les éventuels frais de déplacement sont précisés au devis.</p>
           </div>
           <div class="compact-grid">
             <div class="compact-card"><b>✓</b>Bartender(s)</div>
@@ -2050,7 +1933,7 @@
             <div class="compact-card"><b>✓</b>Installation</div>
             <div class="compact-card"><b>✓</b>Matériel professionnel</div>
             <div class="compact-card"><b>✓</b>Cocktails préparés à la minute</div>
-            <div class="compact-card"><b>✓</b>Consommables</div>
+            <div class="compact-card"><b>✓</b>Alcools et ingrédients</div><div class="compact-card"><b>✓</b>Verres et consommables</div>
             <div class="compact-card"><b>✓</b>Service</div>
             <div class="compact-card"><b>✓</b>Nettoyage</div>
             <div class="compact-card"><b>✓</b>Conseils</div>
@@ -2115,6 +1998,7 @@
         </div>
       </section>
 
+      <section id="journal"><div class="section-inner"><div class="section-title"><h2>Le journal Winess Signature</h2><p>Conseils pour organiser votre bar à cocktails, préparer votre réception et choisir une formule adaptée à votre événement.</p></div><div class="actions"><a class="btn btn-primary" href="blog/">Découvrir nos conseils</a></div></div></section>
       <section id="alcool">
         <div class="section-inner">
           <div class="section-title">
@@ -2196,7 +2080,7 @@
           <div class="faq-list">
             <details>
               <summary>Combien coûte un bar mobile pour un événement ?</summary>
-              <p>La Formule Signature WINESS débute à 1 490 € TTC jusqu'à 50 personnes. De 51 à 109 invités, le tarif augmente de 20 € TTC par personne supplémentaire. À partir de 110 personnes, une proposition personnalisée est préparée selon le lieu, la durée, le nombre de bartenders, le type de bar et les boissons souhaitées. Les frais de déplacement sont calculés séparément. Un devis précis permet de confirmer chaque élément avant la réservation.</p>
+              <p>La Formule Signature WINESS débute à 1 390 € TTC pour 40 personnes. Au-delà de 40 personnes, une proposition personnalisée est préparée. À partir de 110 personnes, une proposition personnalisée est préparée selon le lieu, la durée, le nombre de bartenders, le type de bar et les boissons souhaitées. Les frais de déplacement sont calculés séparément. Un devis précis permet de confirmer chaque élément avant la réservation.</p>
             </details>
             <details>
               <summary>Les cocktails sont-ils 100 % casher ?</summary>
@@ -2224,7 +2108,7 @@
             </details>
             <details>
               <summary>Comment obtenir un devis personnalisé ?</summary>
-              <p>Utilisez le configurateur ou le formulaire de devis en indiquant vos coordonnées, la date, la ville, le type d'événement, le nombre d'invités et la formule souhaitée. Plus les informations sont précises, plus notre première proposition peut être adaptée. Vous pouvez également nous contacter directement sur WhatsApp pour présenter votre projet. L'équipe WINESS revient ensuite vers vous afin de valider les horaires, le lieu, les cocktails, les options et les contraintes logistiques avant de transmettre le devis final.</p>
+              <p>Utilisez le formulaire de devis en indiquant vos coordonnées, la date, la ville, le type d'événement, le nombre d'invités et la formule souhaitée. Plus les informations sont précises, plus notre première proposition peut être adaptée. Vous pouvez également nous contacter directement sur WhatsApp pour présenter votre projet. L'équipe WINESS revient ensuite vers vous afin de valider les horaires, le lieu, les cocktails, les options et les contraintes logistiques avant de transmettre le devis final.</p>
             </details>
           </div>
         </div>
@@ -2472,174 +2356,10 @@
       });
     });
 
-    for (let count = 40; count <= 300; count += 1) {
-      const option = document.createElement("option");
-      option.value = count;
-      option.textContent = `${count} personnes`;
-      guests.appendChild(option);
-    }
-
-    function teamForGuestCount(count) {
-      if (count <= 60) return ["1 Bartender", "1 Bar mobile"];
-      if (count <= 200) return ["2 Bartenders", "1 Bar mobile"];
-      return ["3 Bartenders", "2 Bars mobiles", "1 Commis"];
-    }
-
-    function calculatePrice(count) {
-      return count <= 50 ? 1490 : 1490 + (count - 50) * 20;
-    }
-
-    function localDateKey(date) {
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      const day = String(date.getDate()).padStart(2, "0");
-      return `${year}-${month}-${day}`;
-    }
-
+    contactEventType.innerHTML = '<option value="">Type d’événement</option>' + eventTypes.map(value => `<option>${value}</option>`).join('');
     function yomTovName(date) {
-      return yomTovDatesByYear[date.getFullYear()]?.[localDateKey(date)] || null;
-    }
-
-    function updateQuote() {
-      const count = Number(guests.value);
-      const team = teamForGuestCount(count);
-      teamList.innerHTML = team.map((item) => `<li>${item}</li>`).join("");
-      const requiresCustomQuote = count >= 110;
-      const price = calculatePrice(count);
-      priceEstimateBox.hidden = requiresCustomQuote;
-      customQuoteButton.hidden = !requiresCustomQuote;
-      priceResult.textContent = `${price.toLocaleString("fr-FR")} € TTC pour ${count} personnes.`;
-      contactGuests.value = `${count} invités`;
-      modalGuests.value = count;
-      syncContactFields();
-    }
-
-    guests.addEventListener("change", updateQuote);
-
-    function renderPills(targetId, items, type) {
-      const target = document.querySelector(targetId);
-      target.innerHTML = items.map((item, index) => `
-        <label class="pill">
-          <input type="${type}" name="${targetId.slice(1)}" value="${item}" ${index === 0 && type === "radio" ? "checked" : ""}>
-          ${item}
-        </label>
-      `).join("");
-    }
-
-    renderPills("#eventTypes", eventTypes, "radio");
-    renderPills("#cocktails", cocktailList, "checkbox");
-    contactEventType.innerHTML = eventTypes.map((item) => `<option value="${item}">${item}</option>`).join("");
-
-    const cocktailNote = document.querySelector("#cocktailNote");
-    document.querySelector("#cocktails").addEventListener("change", (event) => {
-      const checked = [...document.querySelectorAll("#cocktails input:checked")];
-      if (checked.length > 3) event.target.checked = false;
-      const total = document.querySelectorAll("#cocktails input:checked").length;
-      cocktailNote.textContent = `${total}/3 cocktails sélectionnés.`;
-      syncContactFields();
-    });
-
-    document.querySelector("#eventTypes").addEventListener("change", () => {
-      contactEventType.value = document.querySelector("#eventTypes input:checked")?.value || contactEventType.value;
-      syncContactFields();
-    });
-    contactCity.addEventListener("input", syncContactFields);
-    contactDate.addEventListener("input", syncContactFields);
-    contactGuests.addEventListener("input", syncContactFields);
-    contactEventType.addEventListener("change", syncContactFields);
-
-    function renderCalendar() {
-      const year = activeMonth.getFullYear();
-      const month = activeMonth.getMonth();
-      const first = new Date(year, month, 1);
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      const startOffset = (first.getDay() + 6) % 7;
-      const labels = ["L", "M", "M", "J", "V", "S", "D"];
-      monthLabel.textContent = activeMonth.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
-      calendarGrid.innerHTML = labels.map((day) => `<div class="dow">${day}</div>`).join("");
-
-      for (let i = 0; i < startOffset; i += 1) {
-        calendarGrid.insertAdjacentHTML("beforeend", "<span></span>");
-      }
-
-      for (let day = 1; day <= daysInMonth; day += 1) {
-        const date = new Date(year, month, day);
-        const holidayName = yomTovName(date);
-        const disabled = date.getDay() === 5 || date.getDay() === 6 || Boolean(holidayName);
-        const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = `day${disabled ? " disabled" : ""}${holidayName ? " yom-tov" : ""}${isSelected ? " selected" : ""}`;
-        button.textContent = day;
-        button.disabled = disabled && !holidayName;
-        const dateLabel = date.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
-        const unavailableLabel = holidayName ? `${dateLabel}. Jour de Yom Tov – indisponible (${holidayName})` : dateLabel;
-        button.setAttribute("aria-label", unavailableLabel);
-        if (holidayName) {
-          button.title = "Jour de Yom Tov – indisponible";
-          button.setAttribute("aria-disabled", "true");
-        }
-        button.addEventListener("click", () => {
-          if (holidayName) {
-            datePicked.textContent = "Jour de Yom Tov – indisponible";
-            return;
-          }
-          selectDate(date);
-        });
-        calendarGrid.appendChild(button);
-      }
-    }
-
-    function selectDate(date) {
-      selectedDate = date;
-      const formatted = date.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-      eventDate.value = date.toISOString().slice(0, 10);
-      datePicked.textContent = `Date sélectionnée : ${formatted}`;
-      contactDate.value = formatted;
-      renderCalendar();
-      syncContactFields();
-    }
-
-    document.querySelector("#prevMonth").addEventListener("click", () => {
-      activeMonth = new Date(activeMonth.getFullYear(), activeMonth.getMonth() - 1, 1);
-      renderCalendar();
-    });
-
-    document.querySelector("#nextMonth").addEventListener("click", () => {
-      activeMonth = new Date(activeMonth.getFullYear(), activeMonth.getMonth() + 1, 1);
-      renderCalendar();
-    });
-
-    function syncContactFields() {
-      const typedCount = parseInt(contactGuests.value, 10);
-      const count = Number.isFinite(typedCount) ? typedCount : Number(guests.value);
-      const price = calculatePrice(count);
-      const team = teamForGuestCount(count);
-      const selectedEvent = contactEventType.value || document.querySelector("#eventTypes input:checked")?.value || "";
-      const selectedCocktails = [...document.querySelectorAll("#cocktails input:checked")].map((input) => input.value);
-      if (!contactEventType.value) contactEventType.value = selectedEvent;
-      summaryDate.textContent = contactDate.value || "À définir";
-      summaryGuests.textContent = contactGuests.value || `${count} invités`;
-      summaryCocktails.textContent = selectedCocktails.length ? selectedCocktails.join(", ") : "À choisir";
-      summaryTeam.textContent = team.join(", ");
-      summaryCity.textContent = contactCity.value || "À définir";
-      summaryPrice.textContent = count >= 110 ? "Devis personnalisé" : `${price.toLocaleString("fr-FR")} € TTC`;
-      const details = [
-        selectedCocktails.length ? `Cocktails souhaités : ${selectedCocktails.join(", ")}` : ""
-      ].filter(Boolean).join("\n");
-      if (!document.activeElement || document.activeElement !== messageField) {
-        messageField.value = details;
-      }
-    }
-
-    function openQuoteModal() {
-      modalGuests.value = guests.value;
-      const modalDate = customQuoteForm.elements.date;
-      if (eventDate.value) modalDate.value = eventDate.value;
-      modalSuccess.hidden = true;
-      quoteModal.classList.add("open");
-      document.body.classList.add("modal-open");
-      requestAnimationFrame(() => modalLastName.focus());
+      const key = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+      return yomTovDatesByYear[date.getFullYear()]?.[key] || null;
     }
 
     function openInfoModal(type, trigger) {
@@ -2666,10 +2386,9 @@
     function closeQuoteModal() {
       quoteModal.classList.remove("open");
       document.body.classList.remove("modal-open");
-      customQuoteButton.focus();
+      fullName.focus();
     }
 
-    customQuoteButton.addEventListener("click", openQuoteModal);
     quoteModalClose.addEventListener("click", closeQuoteModal);
     infoModalClose.addEventListener("click", closeInfoModal);
 
@@ -2746,9 +2465,6 @@
       });
     });
 
-    updateQuote();
-    renderCalendar();
-    syncContactFields();
   </script>
 </body>
 </html>
