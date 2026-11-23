@@ -126,4 +126,9 @@
       form.removeAttribute("aria-busy");
     }
   });
+
+  // Advertising links can open the callback form directly.
+  if (new URLSearchParams(window.location.search).get("rappel") === "1") {
+    trigger.click();
+  }
 })();
