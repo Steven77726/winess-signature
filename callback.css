@@ -1,8 +1,15 @@
-.winess-callback-trigger {
+.winess-contact-dock {
   position: fixed;
   right: 16px;
-  bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   z-index: 36;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+.winess-callback-trigger {
+  position: static;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -18,6 +25,23 @@
   cursor: pointer;
   touch-action: manipulation;
 }
+
+.winess-contact-dock a.whatsapp-float,
+.winess-contact-dock a.float-whatsapp {
+  position: static;
+  inset: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  gap: 8px;
+  padding: 0 16px;
+  font: 700 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  text-decoration: none;
+  border-radius: 22px;
+}
+body.modal-open .winess-contact-dock,
+body.winess-callback-open .winess-contact-dock { visibility: hidden; }
 
 .winess-callback-trigger svg {
   width: 19px;
@@ -106,18 +130,42 @@ body.winess-callback-open { overflow: hidden; }
 }
 
 @media (max-width: 700px) {
-  .winess-callback-trigger {
-    left: 16px;
-    right: auto;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  body.winess-has-contact-dock { padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px)); }
+  .winess-contact-dock {
+    inset: auto 0 0;
+    flex-direction: row;
+    gap: 10px;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(255, 250, 242, .97);
+    border-top: 1px solid #e1d4c4;
+    box-shadow: 0 -6px 24px rgba(33, 22, 15, .06);
+    backdrop-filter: blur(12px);
   }
+  .winess-callback-trigger { flex: 1; min-width: 0; padding-inline: 10px; border-radius: 13px; box-shadow: none; }
+  .winess-contact-dock a.whatsapp-float,
+  .winess-contact-dock a.float-whatsapp {
+    min-width: 110px;
+    padding-inline: 12px;
+    background: #fffaf2;
+    border: 1px solid #c8d2c3;
+    color: #25492f;
+    box-shadow: none;
+    border-radius: 13px;
+    transform: none;
+  }
+  .winess-contact-dock a.whatsapp-float svg,
+  .winess-contact-dock a.float-whatsapp svg { width: 19px; height: 19px; }
+  .winess-contact-dock a.float-whatsapp { pointer-events: auto; }
+  .winess-contact-dock .winess-callback-trigger:hover { transform: none; }
+  .winess-contact-dock a.whatsapp-float::after { content: none; }
 }
 
 @media (max-width: 360px) {
-  .winess-callback-trigger {
-    max-width: calc(100% - 184px);
-    padding: 0 9px;
-    gap: 5px;
-    font-size: 12px;
+  .winess-contact-dock { padding-inline: 12px; gap: 8px; }
+  .winess-callback-trigger { font-size: 13px; gap: 6px; }
+  .winess-contact-dock a.whatsapp-float,
+  .winess-contact-dock a.float-whatsapp {
+    min-width: 102px;
+    font-size: 13px;
   }
 }

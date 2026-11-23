@@ -1,0 +1,166 @@
+.home-refreshed { --signature-copper: #bf8b57; --signature-paper: #fffaf3; --signature-ink: #241a14; }
+.home-refreshed .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px clamp(20px, 4vw, 64px);
+  background: rgba(255, 250, 243, .96);
+  border-bottom: 1px solid #e6d9cb;
+}
+.home-refreshed .brand { gap: 10px; }
+.home-refreshed .brand img { width: 44px; height: 44px; box-shadow: none; }
+.home-refreshed .brand span { display: block; font-size: 13px; line-height: 1.15; letter-spacing: .01em; }
+.home-refreshed .anchor-nav { gap: 24px; }
+.home-refreshed .hamburger { width: 44px; height: 44px; border-radius: 13px; background: transparent; box-shadow: none; }
+.home-refreshed .hero {
+  min-height: 670px;
+  padding: 140px clamp(24px, 7vw, 110px) 52px;
+  align-items: end;
+}
+.home-refreshed .hero::before { background-position: center top; transform: none; }
+.home-refreshed .hero::after {
+  background: linear-gradient(90deg, rgba(20, 12, 6, .66), rgba(20, 12, 6, .08) 80%), linear-gradient(180deg, rgba(20, 12, 6, .05) 20%, rgba(20, 12, 6, .85) 100%);
+}
+.home-refreshed .hero-content { max-width: 720px; padding: 0; }
+.home-refreshed .hero .eyebrow { min-height: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: #f3d4ad; backdrop-filter: none; font-size: 12px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+.home-refreshed .hero h1 { max-width: 16ch; margin-top: 20px; font: 400 clamp(48px, 5.5vw, 78px)/1.03 Georgia, "Times New Roman", serif; letter-spacing: -.035em; text-wrap: balance; }
+.home-refreshed .hero .subtitle { max-width: 43ch; margin-top: 22px; font-size: 18px; font-weight: 400; line-height: 1.6; color: #fff4e5; }
+.home-refreshed .btn-primary { background: #d2a16b; color: #24180f; box-shadow: none; }
+.home-refreshed .btn-primary:hover { background: #e1b480; }
+.home-refreshed .btn { border-radius: 13px; font-size: 15px; }
+.home-refreshed .welcome { padding: 28px clamp(24px, 7vw, 110px) 24px; background: var(--signature-paper); border-bottom: 1px solid #e6d9cb; }
+.home-refreshed .welcome-inner { max-width: 1220px; margin: auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 22px 40px; }
+.home-refreshed .welcome-price p { font-size: 21px; font-weight: 400; }
+.home-refreshed .welcome-price strong { font-weight: 750; }
+.home-refreshed .welcome-price > span { display: block; margin-top: 6px; color: #6d5b4d; font-size: 13px; line-height: 1.5; }
+.home-refreshed .welcome-actions { display: flex; align-items: center; gap: 24px; }
+.home-refreshed .welcome-actions .btn { min-height: 54px; }
+.home-refreshed .welcome-secondary { font-size: 13px; font-weight: 650; text-decoration: underline; text-underline-offset: 5px; }
+.home-refreshed .welcome-details { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px 30px; color: #705b49; font-size: 12px; }
+.home-refreshed .welcome-details span::before { content: "·"; margin-right: 8px; color: #986737; }
+.home-refreshed .welcome-details button { border: 0; padding: 0; color: #705b49; background: transparent; font: inherit; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.home-refreshed section:not(.hero):not(.welcome) { padding: 64px 24px; }
+.home-refreshed .section-inner { width: min(100%, 1160px); }
+.home-refreshed .section-title { margin-bottom: 30px; gap: 14px; }
+.home-refreshed .section-title h2 { font: 400 clamp(32px, 4vw, 52px)/1.1 Georgia, "Times New Roman", serif; letter-spacing: -.025em; }
+.home-refreshed .section-title p { font-size: 16px; line-height: 1.6; max-width: 65ch; }
+.home-refreshed .realisations-section { background: #221a15; }
+.home-refreshed .realisations-section .section-inner { gap: 16px; }
+.home-refreshed .realisations-section .media-card { border-radius: 18px; box-shadow: none; }
+.home-refreshed .realisations-section .media-badge { font-size: 11px; }
+.home-refreshed .gallery-action { margin-top: 24px; }
+.home-refreshed .gallery-action .btn { min-height: 50px; }
+.home-refreshed .offers-section { background: #f5eee4; }
+.home-refreshed .offers-kicker { font-size: 11px; letter-spacing: .16em; margin-bottom: 4px; }
+.home-refreshed .offers-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: none; margin: 0; align-items: stretch; }
+.home-refreshed .offer-panel { display: flex; flex-direction: column; min-width: 0; border-radius: 22px; box-shadow: none; }
+.home-refreshed .offer-intro { padding: 28px; min-height: 0; }
+.home-refreshed .offer-number { font-size: 120px; right: 22px; top: 6px; }
+.home-refreshed .offer-label { min-height: 0; max-width: none; font-size: 10px; line-height: 1.6; }
+.home-refreshed .offer-intro h3 { min-height: 0; margin: 10px 0 18px; font: 400 38px/1.15 Georgia, serif; }
+.home-refreshed .offer-price { font-size: 29px; }
+.home-refreshed .offer-capacity { min-height: 0; font-size: 13px; margin: 7px 0 20px; }
+.home-refreshed .offer-intro .btn { min-height: 48px; width: 100%; margin: 0; font-size: 14px; }
+.home-refreshed .offer-details { padding: 25px 28px; flex: 1; }
+.home-refreshed .offer-details ul { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 22px; }
+.home-refreshed .offer-details li { font-size: 14px; overflow-wrap: normal; }
+.home-refreshed .offer-option { margin: 22px 0 0; padding-top: 15px; border-top: 1px solid #e4d6c4; }
+.home-refreshed .offer-option summary { color: #715239; font-size: 12px; font-weight: 650; cursor: pointer; }
+.home-refreshed .offer-option p { font-size: 12px; margin: 10px 0 0; line-height: 1.7; }
+.home-refreshed .offer-personalized { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 24px 0; margin-top: 8px; }
+.home-refreshed .offer-personalized strong { display: block; font-size: 17px; }
+.home-refreshed .offer-personalized p { margin-top: 6px; font-size: 14px; line-height: 1.6; color: #6d5b4d; }
+.home-refreshed .offer-personalized a { flex-shrink: 0; font-size: 13px; text-decoration: underline; text-underline-offset: 5px; }
+.home-refreshed .offer-options { margin-top: 18px; border-top: 1px solid #ddcbb7; padding-top: 26px; }
+.home-refreshed .offer-options > h3 { margin: 0 0 16px; font: 400 25px/1.2 Georgia, serif; }
+.home-refreshed .option-card { background: #fffaf3; border: 1px solid #ddcbb7; border-radius: 14px; margin-top: 12px; overflow: hidden; }
+.home-refreshed .option-card > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; cursor: pointer; list-style: none; }
+.home-refreshed .option-card > summary::-webkit-details-marker { display: none; }
+.home-refreshed .option-card > summary > span:first-child { font-size: 17px; font-weight: 650; }
+.home-refreshed .option-card summary small { display: block; font-size: 12px; margin-top: 3px; color: #705b49; font-weight: 400; }
+.home-refreshed .option-summary-price { display: flex; align-items: center; gap: 18px; white-space: nowrap; font-size: 13px; color: #705b49; }
+.home-refreshed .option-summary-price::after { content: "+"; font-size: 24px; font-weight: 400; }
+.home-refreshed .option-card[open] .option-summary-price::after { content: "−"; }
+.home-refreshed .option-body { padding: 0 22px 22px; }
+.home-refreshed .option-body .offer-details { padding: 15px 0 20px; }
+.home-refreshed .option-body .btn { min-height: 46px; font-size: 13px; }
+.home-refreshed .offers-note { font-size: 12px; line-height: 1.8; margin-top: 24px; max-width: 900px; }
+.home-refreshed #contact { background: #fffaf3; border-top: 1px solid #e6d9cb; }
+.home-refreshed #contact .section-inner { max-width: 850px; }
+.home-refreshed #contact input:not([type="checkbox"]),
+.home-refreshed #contact select,
+.home-refreshed #contact textarea { box-shadow: none; border: 1px solid #cdbba8; background: #fff; border-radius: 12px; }
+.home-refreshed #contact input:not([type="checkbox"]),
+.home-refreshed #contact select { min-height: 50px; }
+.home-refreshed #contact .consent { grid-column: 1 / -1; }
+.home-refreshed #faq .section-inner { max-width: 850px; }
+.home-refreshed #faq .faq-list details { box-shadow: none; border: 1px solid #dfd0bf; border-radius: 12px; }
+.home-refreshed #journal { background: #eee4d7; }
+.home-refreshed #journal .section-title h2 { font-size: 33px; }
+.home-refreshed #journal .actions { display: flex; flex-wrap: wrap; }
+.home-refreshed #journal .btn-secondary { color: #4d3525; border-color: #b49a80; background: transparent; }
+.home-refreshed #zone .map-frame { max-height: 260px; box-shadow: none; }
+.home-refreshed #zone .badge { box-shadow: none; background: #fffaf3; border: 1px solid #dfd0bf; }
+.home-refreshed #alcool { padding-block: 38px; }
+.home-refreshed #alcool .section-title h2 { font: 650 18px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.home-refreshed #alcool .legal-box { box-shadow: none; border: 1px solid #dfd0bf; border-radius: 12px; }
+.home-refreshed :focus-visible { outline: 3px solid #8b542d; outline-offset: 4px; }
+@media (max-width: 1100px) {
+  .home-refreshed .welcome-inner { grid-template-columns: 1fr; gap: 18px; }
+  .home-refreshed .welcome-actions { justify-content: space-between; }
+  .home-refreshed .welcome-details { gap: 10px 24px; }
+}
+@media (max-width: 900px) {
+  .home-refreshed .header { padding-inline: 22px; }
+  .home-refreshed .hero { min-height: 620px; padding-inline: 28px; }
+  .home-refreshed .hero h1 { font-size: 60px; }
+  .home-refreshed .offer-details ul { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .home-refreshed .hero { min-height: 520px; min-height: max(470px, 64svh); padding: 118px 24px 30px; }
+  .home-refreshed .hero::before { background-position: center 28%; }
+  .home-refreshed .hero::after { background: linear-gradient(180deg, rgba(20, 12, 6, .04) 5%, rgba(20, 12, 6, .12) 35%, rgba(20, 12, 6, .94) 100%); }
+  .home-refreshed .hero .eyebrow { max-width: 32ch; font-size: 10px; letter-spacing: .08em; line-height: 1.6; }
+  .home-refreshed .hero h1 { max-width: 16ch; margin-top: 14px; font-size: clamp(36px, 10vw, 46px); line-height: 1.05; }
+  .home-refreshed .hero .subtitle { font-size: 14px; line-height: 1.55; max-width: 36ch; margin-top: 15px; }
+  .home-refreshed .welcome { padding: 22px 24px 20px; }
+  .home-refreshed .welcome-inner { gap: 16px; }
+  .home-refreshed .welcome-price p { font-size: 20px; }
+  .home-refreshed .welcome-price > span { font-size: 12px; }
+  .home-refreshed .welcome-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .home-refreshed .welcome-actions .btn { width: 100%; min-height: 50px; font-size: 14px; }
+  .home-refreshed .welcome-secondary { text-align: center; min-height: 28px; padding-block: 5px; font-size: 12px; }
+  .home-refreshed .welcome-details { gap: 8px 12px; font-size: 11px; line-height: 1.6; }
+  .home-refreshed .welcome-details span::before { margin-right: 5px; }
+  .home-refreshed section:not(.hero):not(.welcome) { padding: 44px 22px; }
+  .home-refreshed .section-title h2 { font-size: 34px; }
+  .home-refreshed .section-title p { font-size: 14px; }
+  .home-refreshed .realisations-section .section-title { margin-bottom: 24px; }
+  .home-refreshed .realisations-section .video-gallery { grid-auto-columns: min(76vw, 300px); gap: 12px; }
+  .home-refreshed .realisations-section .video-card { aspect-ratio: 4 / 5; }
+  .home-refreshed .realisations-section .video-gallery .photo-card { aspect-ratio: 4 / 5; }
+  .home-refreshed .photo-card { aspect-ratio: 4 / 3; }
+  .home-refreshed .gallery-action .btn { width: 100%; font-size: 14px; }
+  .home-refreshed .offers-list { grid-template-columns: 1fr; gap: 20px; }
+  .home-refreshed .offer-intro { padding: 24px; }
+  .home-refreshed .offer-intro h3 { font-size: 34px; }
+  .home-refreshed .offer-intro .btn { width: 100%; }
+  .home-refreshed .offer-details { padding: 22px 24px; }
+  .home-refreshed .offer-details ul { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .home-refreshed .offer-details li { font-size: 13px; }
+  .home-refreshed .offer-personalized { display: block; padding-block: 22px; }
+  .home-refreshed .offer-personalized a { display: inline-block; margin-top: 12px; line-height: 1.7; }
+  .home-refreshed .option-card > summary { padding: 17px; gap: 8px; }
+  .home-refreshed .option-card > summary > span:first-child { font-size: 15px; }
+  .home-refreshed .option-summary-price { font-size: 11px; gap: 10px; }
+  .home-refreshed .option-body { padding-inline: 17px; }
+  .home-refreshed #contact .consent { font-size: 12px; }
+  .home-refreshed #zone .section-title h2,
+  .home-refreshed #journal .section-title h2 { font-size: 29px; }
+}
+@media (max-width: 360px) {
+  .home-refreshed .hero { padding-inline: 21px; }
+  .home-refreshed .hero h1 { font-size: 36px; }
+  .home-refreshed .welcome { padding-inline: 21px; }
+  .home-refreshed .welcome-price > span { font-size: 11px; }
+  .home-refreshed .offer-details ul { grid-template-columns: 1fr; }
+}

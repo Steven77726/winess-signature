@@ -30,29 +30,46 @@
     </form>
     <p class="winess-callback-status" role="status" aria-live="polite" hidden></p>`;
 
-  document.body.append(trigger, dialog);
+  const dock = document.createElement("div");
+  dock.className = "winess-contact-dock";
+  dock.setAttribute("role", "group");
+  dock.setAttribute("aria-label", "Contacter Winess Signature");
+  const whatsapp = document.querySelector(".floating-contact .float-whatsapp, a.whatsapp-float");
+  dock.append(trigger);
+  if (whatsapp) dock.append(whatsapp);
+  document.body.append(dock, dialog);
+  document.body.classList.add("winess-has-contact-dock");
   const form = dialog.querySelector("form");
   const firstName = form.elements.namedItem("firstName");
   const phone = form.elements.namedItem("phone");
   const submit = form.querySelector('[type="submit"]');
   const status = dialog.querySelector('[role="status"]');
   let submitting = false;
+  let returnFocus = trigger;
 
-  trigger.addEventListener("click", () => {
+  function openCallback(event) {
+    if (event) event.preventDefault();
     if (typeof dialog.showModal !== "function") {
       window.location.href = "/contact.html";
       return;
     }
     if (dialog.open) return;
+    returnFocus = event?.currentTarget || trigger;
     dialog.showModal();
     document.body.classList.add("winess-callback-open");
     trigger.setAttribute("aria-expanded", "true");
+  }
+  trigger.addEventListener("click", openCallback);
+  document.querySelectorAll("[data-callback-open]").forEach((opener) => {
+    opener.setAttribute("aria-haspopup", "dialog");
+    opener.setAttribute("aria-controls", dialog.id);
+    opener.addEventListener("click", openCallback);
   });
   dialog.querySelector(".winess-callback-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("close", () => {
     document.body.classList.remove("winess-callback-open");
     trigger.setAttribute("aria-expanded", "false");
-    trigger.focus({ preventScroll: true });
+    if (returnFocus.isConnected) returnFocus.focus({ preventScroll: true });
   });
   dialog.addEventListener("click", (event) => {
     if (event.target !== dialog) return;
